@@ -1,0 +1,22 @@
+name: Testing The Application
+
+on:
+    push:
+      branches: [ "main" ]
+
+jobs:
+    build:
+
+        runs-on: ubuntu-latest
+
+        steps:
+        - uses: actions/checkout@v4
+        - name: Set up Python 3.9
+          uses: actions/setup-python@v3
+          with:
+                python-version: "3.9"
+        - name: Installing Dependencies
+          run:
+            pip install -r requirements.txt
+        - name: Running test cases 
+          run: pytest test_predict.py
