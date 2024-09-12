@@ -56,3 +56,5 @@ def prediction():
 
     return {"loan_approval_status": pred}
 
+print("I am Happy Today!!!")
+
